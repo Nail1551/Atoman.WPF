@@ -12,6 +12,8 @@ namespace Atoman.WPF.ViewModels
     {
         public event PropertyChangedEventHandler PropertyChanged;
 
+        // test 
+
         protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
