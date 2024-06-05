@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34525.116
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Atoman.WPF", "Atoman.WPF\Atoman.WPF.csproj", "{FF3E913B-D632-4712-A5B0-C78C80F8C76A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Atoman.Client", "Atoman.Client\Atoman.Client.csproj", "{2CB4B646-98F9-4B9A-9985-E57E6791C0D6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FF3E913B-D632-4712-A5B0-C78C80F8C76A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FF3E913B-D632-4712-A5B0-C78C80F8C76A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FF3E913B-D632-4712-A5B0-C78C80F8C76A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FF3E913B-D632-4712-A5B0-C78C80F8C76A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2CB4B646-98F9-4B9A-9985-E57E6791C0D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2CB4B646-98F9-4B9A-9985-E57E6791C0D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2CB4B646-98F9-4B9A-9985-E57E6791C0D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2CB4B646-98F9-4B9A-9985-E57E6791C0D6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2F5E2FDA-8265-4079-A48E-452562302EF4}
+	EndGlobalSection
+EndGlobal
