@@ -29,14 +29,12 @@ namespace Atoman.WPF.Views
 
         }
 
-        public string Login = "Nail";
-        public string Password = "Major";
-
+        
         private void LoginButton_Click(object sender, RoutedEventArgs e)
         {
-            string username = logbox.Text;
-            string password = pasbox.Password;
-            if (username == Login && password == Password)
+            bool result=_loginviewModel.CheckUserAuth();
+            
+            if (result = true)
             {
                 MessageBox.Show("Вход выполнен успешно!");
                 

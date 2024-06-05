@@ -9,13 +9,13 @@ namespace Atoman.WPF
 {
     public static class LocalVariables
     {
-        public static string CurrentUserJwtToken {  get; set; }
+        public static string CurrentUserJwtToken { get; set; }
 
         public const string AppName = "AtomanDesktop";
 
         public static string AppVersion = Assembly.GetExecutingAssembly().GetName().Version.ToString();
 
-        public static string UserName = "";
+        public static string UserName { get; set; }
     }
 
 }

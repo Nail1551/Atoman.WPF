@@ -11,21 +11,21 @@
     WindowStartupLocation="CenterScreen" 
     Background="Transparent"
     AllowsTransparency="True"
-    ResizeMode="NoResize"
-        >
+    ResizeMode="NoResize" ShowInTaskbar="False"
+      >
 
     <Border Background="#272B2F" CornerRadius="10">
         <Grid>
             <!-- Grid -->
             <Grid.RowDefinitions>
-                <RowDefinition Height="25"/>
-                <RowDefinition  Height="734"  />
-                <RowDefinition Height="41"/>
+                <RowDefinition Height="0.5*"/>
+                <RowDefinition  Height="10*"  />
+                <RowDefinition Height="0.5*"/>
 
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="300"/>
-                <ColumnDefinition Width="1200"/>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="5*"/>
             </Grid.ColumnDefinitions>
 
 
@@ -38,7 +38,7 @@
 
             <Grid x:Name="NavBar" Grid.Row="1">
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="90"/>
+                    <RowDefinition Height="Auto"/>
                     <RowDefinition/>
                     <RowDefinition/>
                 </Grid.RowDefinitions>
@@ -78,14 +78,17 @@
 
 
             </Grid>
+            <Grid x:Name="Dwn" Grid.Row="2" Grid.Column="1">
+                <Label  Content="{Binding AppVersion}" Margin="35,0,1175,0" Grid.Row="2" VerticalAlignment="Center" Height="36" Width="40" FontSize="16"/>
+                <Label  Content="{Binding Username}" Height="36" Width="60" HorizontalAlignment="Left" Margin="1130,0,0,0" Grid.Row="2" VerticalAlignment="Center" FontSize="16"/>
+            </Grid>
             <Rectangle Height="25" Width="330" Fill="#2E3B47" RadiusX="10" RadiusY="10" VerticalAlignment="Top" HorizontalAlignment="Center" Grid.Row="1" Grid.Column="1" Margin="0,375,0,0"/>
             <TextBlock Text="Пожалуйста, выберите категорию" Grid.Row="1" Grid.Column="1" FontFamily="Montserrat" FontSize="18" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,377,0,0" Height="22" Width="282"/>
 
-            <Frame x:Name="PageFrame" NavigationUIVisibility="Hidden" Margin="0,9,0,0" Grid.Column="1" Grid.Row="1"/>
+            <Frame x:Name="PageFrame" NavigationUIVisibility="Hidden" Margin="0,36,0,36" Grid.Column="1" Grid.RowSpan="3"/>
 
-            <Frame Grid.Row="2"  Background="White" Grid.Column="1" Height="41" VerticalAlignment="Center"/>
-            <Label  Content="{Binding AppVersion}" Margin="10,0,1150,0" Grid.Row="2" VerticalAlignment="Center" Height="40" Width="40" Grid.Column="1" FontSize="16"/>
-            <Label  Content="{Binding Username}" Height="40" Width="60" HorizontalAlignment="Left" Margin="1130,0,0,0" Grid.Row="2" VerticalAlignment="Center" Grid.Column="1" FontSize="16"/>
+
+
 
         </Grid>
     </Border>
