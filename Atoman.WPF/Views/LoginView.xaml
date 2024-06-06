@@ -52,7 +52,9 @@
                 Grid.Row="4"
                 Margin="10"
                 Command="{Binding AuthCommand}"
-                Content="Войти" />
+                Content="Войти" 
+                />
+            
             <!--  Click="LoginButton_Click"  -->
 
         </Grid>

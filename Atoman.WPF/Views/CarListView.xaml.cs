@@ -1,6 +1,9 @@
 ﻿using Atoman.WPF.ViewModels;
-using Atoman.WPF.Views;
+using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -11,27 +14,19 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Atoman.WPF
+namespace Atoman.WPF.Views
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Логика взаимодействия для CarsView.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class CarListView : Page
     {
-        private MainViewModel _viewModel { get; set; }    
-        public MainWindow()
+        public CarListviewModel _viewModel { get; set; }
+        public CarListView()
         {
             InitializeComponent();
-            _viewModel = new MainViewModel();
+            _viewModel = new CarListviewModel();
             this.DataContext = _viewModel;
-            
-        }
-
-        private void CarsButton_Click(object sender, RoutedEventArgs e)
-        {
-            PageFrame.Content = new CarListView();
-            
-
         }
     }
 }

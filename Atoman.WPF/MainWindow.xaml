@@ -5,14 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Atoman.WPF"
         mc:Ignorable="d"
-        Height="800"  
+        Height="830"  
     Width="1500" 
-    WindowStyle="None"
-    WindowStartupLocation="CenterScreen" 
-    Background="Transparent"
-    AllowsTransparency="True"
-    ResizeMode="NoResize" ShowInTaskbar="False"
-      >
+    WindowStartupLocation="CenterScreen" >
 
     <Border Background="#272B2F" CornerRadius="10">
         <Grid>
@@ -24,19 +19,21 @@
 
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="1*"/>
-                <ColumnDefinition Width="5*"/>
+                <ColumnDefinition Width="227*"/>
+                <ColumnDefinition Width="23*"/>
+                <ColumnDefinition Width="1107*"/>
+                <ColumnDefinition Width="143*"/>
             </Grid.ColumnDefinitions>
 
 
             <!-- Заливка основного окна -->
-            <Border Background="#FFE25127" CornerRadius="10,0,0,10" Grid.Row="0" Grid.Column="0" Grid.RowSpan="3" Grid.ColumnSpan="1" />
+            <Border Background="#FFE25127" CornerRadius="10,0,0,10" Grid.Row="0" Grid.Column="0" Grid.RowSpan="3" Grid.ColumnSpan="3" Margin="0,0,1107,0" />
 
 
 
             <!-- Окно навигации -->
 
-            <Grid x:Name="NavBar" Grid.Row="1">
+            <Grid x:Name="NavBar" Grid.Row="1" Grid.ColumnSpan="3" Margin="0,0,1107,0">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto"/>
                     <RowDefinition/>
@@ -44,7 +41,7 @@
                 </Grid.RowDefinitions>
 
 
-                <Button x:Name="CarsButton"  VerticalAlignment="Top" Height="40" Grid.Row="1"  BorderBrush="Transparent" Margin="0,10,0,0"  >
+                <Button x:Name="CarsButton"  VerticalAlignment="Top" Height="40" Grid.Row="1"  BorderBrush="Transparent" Margin="0,10,0,0" Click="CarsButton_Click"  >
                     <Border x:Name="RectVisCars" BorderBrush="Transparent" BorderThickness="1" CornerRadius="3">
                         <StackPanel Orientation="Horizontal" Width="290">
 
@@ -78,14 +75,14 @@
 
 
             </Grid>
-            <Grid x:Name="Dwn" Grid.Row="2" Grid.Column="1">
+            <Grid x:Name="Dwn" Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="2" Margin="0,712,0,0" Grid.RowSpan="2">
                 <Label  Content="{Binding AppVersion}" Margin="35,0,1175,0" Grid.Row="2" VerticalAlignment="Center" Height="36" Width="40" FontSize="16"/>
                 <Label  Content="{Binding Username}" Height="36" Width="60" HorizontalAlignment="Left" Margin="1130,0,0,0" Grid.Row="2" VerticalAlignment="Center" FontSize="16"/>
             </Grid>
-            <Rectangle Height="25" Width="330" Fill="#2E3B47" RadiusX="10" RadiusY="10" VerticalAlignment="Top" HorizontalAlignment="Center" Grid.Row="1" Grid.Column="1" Margin="0,375,0,0"/>
-            <TextBlock Text="Пожалуйста, выберите категорию" Grid.Row="1" Grid.Column="1" FontFamily="Montserrat" FontSize="18" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,377,0,0" Height="22" Width="282"/>
+            <Rectangle Height="25" Width="330" Fill="#2E3B47" RadiusX="10" RadiusY="10" VerticalAlignment="Top" HorizontalAlignment="Left" Grid.Row="1" Grid.Column="2" Margin="460,375,0,0"/>
+            <TextBlock Text="Пожалуйста, выберите категорию" Grid.Row="1" Grid.Column="2" FontFamily="Montserrat" FontSize="18" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="484,377,0,0" Height="22" Width="282"/>
 
-            <Frame x:Name="PageFrame" NavigationUIVisibility="Hidden" Margin="0,36,0,36" Grid.Column="1" Grid.RowSpan="3"/>
+            <Frame x:Name="PageFrame" NavigationUIVisibility="Hidden" Grid.Column="2" Grid.ColumnSpan="2" Grid.Row="1"/>
 
 
 

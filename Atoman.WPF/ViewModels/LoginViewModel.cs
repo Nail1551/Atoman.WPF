@@ -34,7 +34,8 @@ namespace Atoman.WPF.ViewModels
 
         private void UpdateBtnLoginState()
         {
-            IsBtnLoginClickable = !string.IsNullOrEmpty(UserLogin) && !string.IsNullOrEmpty(UserPassword);
+            
+            IsBtnLoginClickable = !string.IsNullOrEmpty(UserLogin) && !string.IsNullOrEmpty(Convert.ToString(UserPassword));
         }
 
 
