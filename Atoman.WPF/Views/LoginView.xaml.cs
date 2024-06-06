@@ -27,17 +27,19 @@ namespace Atoman.WPF.Views
             _loginviewModel = new LoginViewModel();
             this.DataContext = _loginviewModel;
 
+            // Подписываемся на событие
+            _loginviewModel.CheckUserAuthResultEvent += _loginviewModel_CheckUserAuthEvent;
         }
 
-        
-        private void LoginButton_Click(object sender, RoutedEventArgs e)
+        /// <summary>
+        /// Вызывается при обработке события
+        /// </summary>
+        /// <param name="result"></param>
+        private void _loginviewModel_CheckUserAuthEvent(bool result)
         {
-            bool result=_loginviewModel.CheckUserAuth();
-            
-            if (result = true)
+            if (result)
             {
                 MessageBox.Show("Вход выполнен успешно!");
-                
                 this.Close();
             }
             else
@@ -45,5 +47,22 @@ namespace Atoman.WPF.Views
                 MessageBox.Show("Неверный логин или пароль. Попробуйте снова.");
             }
         }
+
+
+        //private void LoginButton_Click(object sender, RoutedEventArgs e)
+        //{
+        //    bool result=_loginviewModel.CheckUserAuth();
+
+        //    if (result = true)
+        //    {
+        //        MessageBox.Show("Вход выполнен успешно!");
+
+        //        this.Close();
+        //    }
+        //    else
+        //    {
+        //        MessageBox.Show("Неверный логин или пароль. Попробуйте снова.");
+        //    }
+        //}
     }
 }

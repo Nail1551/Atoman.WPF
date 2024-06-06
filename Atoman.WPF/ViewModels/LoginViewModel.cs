@@ -15,18 +15,28 @@ namespace Atoman.WPF.ViewModels
         }
         
 
-
-        public  bool CheckUserAuth()
+        /// <summary>
+        /// Проверка пользователя
+        /// </summary>
+        public void CheckUserAuth()
         {
             if (UserLogin == "Nail" && UserPassword == "Major")
             {
-               return true;
+                // Вызываем событие с результатом проверки
+                CheckUserAuthResultEvent?.Invoke(true);
             }
             else
             {
-               return false;
+                CheckUserAuthResultEvent?.Invoke(false);
             }
         }
+
+
+        private void UpdateBtnLoginState()
+        {
+            IsBtnLoginClickable = !string.IsNullOrEmpty(UserLogin) && !string.IsNullOrEmpty(UserPassword);
+        }
+
 
         #region Properties 
 
@@ -36,8 +46,9 @@ namespace Atoman.WPF.ViewModels
             get { return _userLogin; }
             set
             {
-                _userLogin = value;
+                _userLogin = value;     
                 OnPropertyChanged();
+                UpdateBtnLoginState();
             }
         }
 
@@ -47,10 +58,35 @@ namespace Atoman.WPF.ViewModels
             get { return _userPassword; }
             set
             {
-                _userPassword = value;
+                _userPassword = value;           
+                OnPropertyChanged();
+                UpdateBtnLoginState();
+            }
+        }
+
+        private bool _isBtnLoginClickable = false;
+        public bool IsBtnLoginClickable
+        {
+            get { return _isBtnLoginClickable; }
+            set
+            {
+                _isBtnLoginClickable = value;
                 OnPropertyChanged();
             }
         }
+
+        #endregion
+
+        #region Commands 
+
+        public RelayCommand AuthCommand => new RelayCommand(a => CheckUserAuth(), can => IsBtnLoginClickable);
+
+        #endregion
+
+        #region Events 
+
+        public event Action<bool> CheckUserAuthResultEvent; // Событие - результат проверки
+
         #endregion
     }
 }
