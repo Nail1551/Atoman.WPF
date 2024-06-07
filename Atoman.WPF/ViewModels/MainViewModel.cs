@@ -51,6 +51,8 @@ namespace Atoman.WPF.ViewModels
                 OnPropertyChanged();
                   } 
         }
+
+
         #endregion
 
         #region Commands 

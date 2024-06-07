@@ -42,7 +42,7 @@ namespace Atoman.WPF.Models
                         CarId = Guid.NewGuid(),
                         CarBarCode = string.Empty,
                         CarMileage = 0,
-                        CarNumber = "T538OO790",
+                        CarNumber = "TK538OO790",
                         CarTypeModel = new CarTypeModel
                         {
                             CarTypeId = Guid.NewGuid(),
@@ -62,7 +62,34 @@ namespace Atoman.WPF.Models
                             CarTypeName = "Гелик",
                             InspectionPatternId = 2
                         }
+                },
+                new CarModel
+                {
+                        CarId = Guid.NewGuid(),
+                        CarBarCode = string.Empty,
+                        CarMileage = 0,
+                        CarNumber = "E753BK790",
+                        CarTypeModel = new CarTypeModel
+                        {
+                            CarTypeId = Guid.NewGuid(),
+                            CarTypeName = "нЕГелик",
+                            InspectionPatternId = 3
+                        }
+                },
+                new CarModel
+                {
+                        CarId = Guid.NewGuid(),
+                        CarBarCode = string.Empty,
+                        CarMileage = 0,
+                        CarNumber = "K233AA790",
+                        CarTypeModel = new CarTypeModel
+                        {
+                            CarTypeId = Guid.NewGuid(),
+                            CarTypeName = "Гелик",
+                            InspectionPatternId = 4
+                        }
                 }
+
             };
         }
     }

@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -27,6 +28,26 @@ namespace Atoman.WPF.Views
             InitializeComponent();
             _viewModel = new CarListviewModel();
             this.DataContext = _viewModel;
+        }
+        public void ConvertLicensePlate(string input)
+        {
+            // Словарь для замены русских букв на английские
+            var replaceChars = new Dictionary<char, char>
+            {
+                {'А', 'A'}, {'В', 'B'}, {'Е', 'E'}, {'К', 'K'}, {'М', 'M'}, {'Н', 'H'},
+                {'О', 'O'}, {'Р', 'P'}, {'С', 'C'}, {'Т', 'T'}, {'У', 'Y'}, {'Х', 'X'}
+               };
+
+            // Преобразование текста в верхний регистр и замена русских букв на английские
+            var result = input.ToUpper();
+            result = Regex.Replace(result, "[АВЕКМНОРСТУХ]", m => replaceChars[m.Value[0]].ToString());
+
+            SearchBox.Text = result;
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            ConvertLicensePlate(SearchBox.Text);
         }
     }
 }

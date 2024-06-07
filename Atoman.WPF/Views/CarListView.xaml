@@ -9,12 +9,13 @@
       Title="CarListView" Background="OrangeRed">
     
     <Grid>
-        <DataGrid Margin="32,56,32,56"  ItemsSource="{Binding CarModels}" AutoGenerateColumns="False" >
+        <DataGrid Margin="32,102,32,10"  ItemsSource="{Binding CarModelsGrid}" AutoGenerateColumns="False" >
             <DataGrid.Columns>
                 <DataGridTextColumn Header="рег. номер"  Binding="{Binding CarNumber}" Width="1*" />
                 <DataGridTextColumn Header="Марка" Binding="{Binding CarTypeModel.CarTypeName}" Width="1*"/>
-                
             </DataGrid.Columns>
         </DataGrid>
+        <TextBox x:Name="SearchBox" HorizontalAlignment="Left" Margin="39,60,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <Button Content="Button" HorizontalAlignment="Left" Margin="200,60,0,0" VerticalAlignment="Top" Click="Button_Click"/>
     </Grid>
 </Page>

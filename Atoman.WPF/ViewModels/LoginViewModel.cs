@@ -20,6 +20,12 @@ namespace Atoman.WPF.ViewModels
         /// </summary>
         public void CheckUserAuth()
         {
+            if (string.IsNullOrEmpty(UserPassword))
+            {
+
+                return;
+            }
+
             if (UserLogin == "Nail" && UserPassword == "Major")
             {
                 // Вызываем событие с результатом проверки
@@ -35,7 +41,7 @@ namespace Atoman.WPF.ViewModels
         private void UpdateBtnLoginState()
         {
             
-            IsBtnLoginClickable = !string.IsNullOrEmpty(UserLogin) && !string.IsNullOrEmpty(Convert.ToString(UserPassword));
+            IsBtnLoginClickable = !string.IsNullOrEmpty(UserLogin);
         }
 
 
@@ -61,7 +67,7 @@ namespace Atoman.WPF.ViewModels
             {
                 _userPassword = value;           
                 OnPropertyChanged();
-                UpdateBtnLoginState();
+                
             }
         }
 
