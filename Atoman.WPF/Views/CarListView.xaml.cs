@@ -39,15 +39,16 @@ namespace Atoman.WPF.Views
                };
 
             // Преобразование текста в верхний регистр и замена русских букв на английские
-            var result = input.ToUpper();
-            result = Regex.Replace(result, "[АВЕКМНОРСТУХ]", m => replaceChars[m.Value[0]].ToString());
+            var SearchPlate = input.ToUpper();
+            SearchPlate = Regex.Replace(SearchPlate, "[АВЕКМНОРСТУХ]", m => replaceChars[m.Value[0]].ToString());
 
-            SearchBox.Text = result;
+            SearchBox.Text = SearchPlate;
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            ConvertLicensePlate(SearchBox.Text);
-        }
+        //private void Button_Click(object sender, RoutedEventArgs e)
+        //{
+        //    ConvertLicensePlate(SearchBox.Text);
+            
+        //}
     }
 }
