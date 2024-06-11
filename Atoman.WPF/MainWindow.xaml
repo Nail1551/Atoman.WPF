@@ -80,7 +80,7 @@
                 <Label  Content="{Binding Username}" Height="36" Width="60" HorizontalAlignment="Left" Margin="1130,0,0,0" Grid.Row="2" VerticalAlignment="Center" FontSize="16"/>
             </Grid>
             <Rectangle Height="25" Width="330" Fill="#2E3B47" RadiusX="10" RadiusY="10" VerticalAlignment="Top" HorizontalAlignment="Left" Grid.Row="1" Grid.Column="2" Margin="460,375,0,0"/>
-            <TextBlock Text="Пожалуйста, выберите категорию" Grid.Row="1" Grid.Column="2" FontFamily="Montserrat" FontSize="18" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="484,377,0,0" Height="22" Width="282"/>
+            <TextBlock Text="Пожалуйста, выберите категорию" Grid.Row="1" Grid.Column="2" FontFamily="Montserrat" FontSize="18" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="484,377,0,0" Height="22" Width="Auto"/>
 
             <Frame x:Name="PageFrame" NavigationUIVisibility="Hidden" Grid.Column="2" Grid.ColumnSpan="2" Grid.Row="1"/>
 

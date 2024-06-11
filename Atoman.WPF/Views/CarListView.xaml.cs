@@ -45,10 +45,6 @@ namespace Atoman.WPF.Views
             SearchBox.Text = SearchPlate;
         }
 
-        //private void Button_Click(object sender, RoutedEventArgs e)
-        //{
-        //    ConvertLicensePlate(SearchBox.Text);
-            
-        //}
+        
     }
 }

@@ -16,6 +16,6 @@
             </DataGrid.Columns>
         </DataGrid>
         <TextBox x:Name="SearchBox" HorizontalAlignment="Left" Margin="39,60,0,0" TextWrapping="Wrap"  Text="{Binding SearchPlate}" VerticalAlignment="Top" Width="120"/>
-        <Button Content="Button" HorizontalAlignment="Left" Margin="200,60,0,0" VerticalAlignment="Top" Command="{Binding SearchCommand}"/> <!--Click="Button_Click"-->
+        <Button Content="Поиск" HorizontalAlignment="Left" Margin="200,60,0,0" VerticalAlignment="Top" Command="{Binding SearchCommand}"/>
     </Grid>
 </Page>

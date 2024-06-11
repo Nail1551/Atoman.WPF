@@ -42,7 +42,7 @@ namespace Atoman.WPF.Models
                         CarId = Guid.NewGuid(),
                         CarBarCode = string.Empty,
                         CarMileage = 0,
-                        CarNumber = "TK538OO790",
+                        CarNumber = "T538OO790",
                         CarTypeModel = new CarTypeModel
                         {
                             CarTypeId = Guid.NewGuid(),

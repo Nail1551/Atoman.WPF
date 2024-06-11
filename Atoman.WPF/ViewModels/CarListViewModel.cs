@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace Atoman.WPF.ViewModels
 {
@@ -77,19 +78,35 @@ namespace Atoman.WPF.ViewModels
             var result = searchText.ToUpper();
             return Regex.Replace(result, "[АВЕКМНОРСТУХ]", m => replaceChars[m.Value[0]].ToString());
             
+
             
         }
 
         public void FilterCar()
         {
-          
+   
             CarModelsGrid.Clear();
-
-
             var filteredCars = CarList.Where(car => car.CarNumber.Contains(SearchPlate)).ToList();
-
-            
-            filteredCars.ForEach(car => CarModelsGrid.Add(car));
+   
+            if (Regex.IsMatch(SearchPlate, @"^[ABEKMHOPCTYX0-9]+$"))
+            {
+                if (filteredCars.Any())
+                {
+                    CarModelsGrid = new ObservableCollection<Atoman.WPF.Models.CarModel>(filteredCars);
+                }
+                else
+                {
+                    // Выводим сообщение о том, что ничего не найдено
+                    MessageBox.Show("По вашему запросу ничего не найдено. Попробуйте изменить критерии поиска и попробовать снова.");
+                }
+            }
+            else
+            {
+                // Выводим сообщение об ошибке
+                MessageBox.Show("Введите корректные данные. Допустимые символы для поиска: A, B, E, K, M, H, O, P, C, T, Y, X и цифры.");
+                // Очищаем поле поиска
+                SearchPlate = string.Empty;
+            }
         }
 
         #region Commands 
