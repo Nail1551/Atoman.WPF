@@ -16,14 +16,28 @@ namespace Atoman.WPF.ViewModels
         public CarListviewModel()
         {
             CarList = CarMockService.GetCars();
-            CarModelsGrid = new ObservableCollection<CarModel>(CarMockService.GetCars().Take(3));
+            CarModelsGrid = new ObservableCollection<CarModel>(CarMockService.GetCars());
+            ActList =new ObservableCollection<Acts>( ActMockService.GetAct());
         }
 
 
         #region Properties 
 
+        
         private List<CarModel> _carList;
         public List<CarModel> CarList;
+
+        private ObservableCollection<Acts> _actList;
+        public ObservableCollection<Acts> ActList
+        {
+            get { return _actList; }
+            set 
+            { 
+                _actList = value;
+                OnPropertyChanged();
+            }   
+        }
+
 
         private ObservableCollection<CarModel> _carModelsGrid;
         public ObservableCollection<CarModel> CarModelsGrid
@@ -92,7 +106,7 @@ namespace Atoman.WPF.ViewModels
             {
                 if (filteredCars.Any())
                 {
-                    CarModelsGrid = new ObservableCollection<Atoman.WPF.Models.CarModel>(filteredCars);
+                    CarModelsGrid = new ObservableCollection<CarModel>(filteredCars);
                 }
                 else
                 {

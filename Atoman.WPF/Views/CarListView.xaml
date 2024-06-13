@@ -7,9 +7,13 @@
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="CarListView" Background="OrangeRed">
-    
+
     <Grid>
-        <DataGrid Margin="32,102,32,10"  ItemsSource="{Binding CarModelsGrid}" AutoGenerateColumns="False" >
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="241*"/>
+            <ColumnDefinition Width="559*"/>
+        </Grid.ColumnDefinitions>
+        <DataGrid Margin="32,102,12,10"  ItemsSource="{Binding CarModelsGrid}" AutoGenerateColumns="False" >
             <DataGrid.Columns>
                 <DataGridTextColumn Header="рег. номер"  Binding="{Binding CarNumber}" Width="1*" />
                 <DataGridTextColumn Header="Марка" Binding="{Binding CarTypeModel.CarTypeName}" Width="1*"/>
@@ -17,5 +21,13 @@
         </DataGrid>
         <TextBox x:Name="SearchBox" HorizontalAlignment="Left" Margin="39,60,0,0" TextWrapping="Wrap"  Text="{Binding SearchPlate}" VerticalAlignment="Top" Width="120"/>
         <Button Content="Поиск" HorizontalAlignment="Left" Margin="200,60,0,0" VerticalAlignment="Top" Command="{Binding SearchCommand}"/>
+        <DataGrid Margin="19,102,56,10" Grid.Column="1" ItemsSource="{Binding ActList}" AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Номер"  Binding="{Binding ActId}" Width="1*" />
+                <DataGridTextColumn Header="Дата" Binding="{Binding ActDate }" Width="1*"/>
+                <DataGridTextColumn Header="Сдающий" Binding="{Binding NameSdch}" Width="1*" />
+                <DataGridTextColumn Header="Приемщик" Binding="{Binding NamePriem}" Width="1*" />
+            </DataGrid.Columns>
+        </DataGrid>
     </Grid>
 </Page>
