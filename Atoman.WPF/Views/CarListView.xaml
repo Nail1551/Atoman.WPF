@@ -10,18 +10,18 @@
 
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="241*"/>
-            <ColumnDefinition Width="559*"/>
+            <ColumnDefinition Width="127*"/>
+            <ColumnDefinition Width="273*"/>
         </Grid.ColumnDefinitions>
-        <DataGrid Margin="32,102,12,10"  ItemsSource="{Binding CarModelsGrid}" AutoGenerateColumns="False" >
+        <DataGrid Margin="32,102,12,10"  ItemsSource="{Binding CarModelsGrid}" AutoGenerateColumns="False" x:Name="CarGrid" SelectedItem="{Binding SelectedCar,Mode=TwoWay}" MouseDoubleClick="CarGrid_MouseDoubleClick" IsReadOnly="True">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="рег. номер"  Binding="{Binding CarNumber}" Width="1*" />
                 <DataGridTextColumn Header="Марка" Binding="{Binding CarTypeModel.CarTypeName}" Width="1*"/>
             </DataGrid.Columns>
         </DataGrid>
-        <TextBox x:Name="SearchBox" HorizontalAlignment="Left" Margin="39,60,0,0" TextWrapping="Wrap"  Text="{Binding SearchPlate}" VerticalAlignment="Top" Width="120"/>
-        <Button Content="Поиск" HorizontalAlignment="Left" Margin="200,60,0,0" VerticalAlignment="Top" Command="{Binding SearchCommand}"/>
-        <DataGrid Margin="19,102,56,10" Grid.Column="1" ItemsSource="{Binding ActList}" AutoGenerateColumns="False">
+        <TextBox x:Name="SearchBox" HorizontalAlignment="Left" Margin="39,60,0,0" TextWrapping="Wrap"  Text="{Binding SearchPlate}" VerticalAlignment="Top" Width="120" Height="18"/>
+        <Button Content="Поиск" HorizontalAlignment="Left" Margin="200,60,0,0" VerticalAlignment="Top" Height="20" Width="38" />
+        <DataGrid Margin="26,102,49,10" Grid.Column="1" AutoGenerateColumns="False" x:Name="ActsGrid">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Номер"  Binding="{Binding ActId}" Width="1*" />
                 <DataGridTextColumn Header="Дата" Binding="{Binding ActDate }" Width="1*"/>

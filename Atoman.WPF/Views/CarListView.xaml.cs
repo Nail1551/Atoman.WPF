@@ -1,4 +1,5 @@
-﻿using Atoman.WPF.ViewModels;
+﻿using Atoman.WPF.Models;
+using Atoman.WPF.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -28,6 +29,7 @@ namespace Atoman.WPF.Views
             InitializeComponent();
             _viewModel = new CarListviewModel();
             this.DataContext = _viewModel;
+          
         }
         public void ConvertLicensePlate(string input)
         {
@@ -45,6 +47,11 @@ namespace Atoman.WPF.Views
             SearchBox.Text = SearchPlate;
         }
 
-        
+        private void CarGrid_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            
+            _viewModel.FilterAct();
+            ActsGrid.ItemsSource = _viewModel.FilterActs;
+        }
     }
 }

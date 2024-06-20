@@ -13,27 +13,26 @@
         <Grid>
             <!-- Grid -->
             <Grid.RowDefinitions>
-                <RowDefinition Height="0.5*"/>
-                <RowDefinition  Height="10*"  />
-                <RowDefinition Height="0.5*"/>
+                <RowDefinition Height="37*"/>
+                <RowDefinition  Height="709*"  />
+                <RowDefinition Height="68*"/>
 
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="227*"/>
-                <ColumnDefinition Width="23*"/>
-                <ColumnDefinition Width="1107*"/>
+                <ColumnDefinition Width="209*"/>
+                <ColumnDefinition Width="1148*"/>
                 <ColumnDefinition Width="143*"/>
             </Grid.ColumnDefinitions>
 
 
             <!-- Заливка основного окна -->
-            <Border Background="#FFE25127" CornerRadius="10,0,0,10" Grid.Row="0" Grid.Column="0" Grid.RowSpan="3" Grid.ColumnSpan="3" Margin="0,0,1107,0" />
+            <Border Background="#FFE25127" CornerRadius="10,0,0,10" Grid.Row="0" Grid.Column="0" Grid.RowSpan="3" />
 
 
 
             <!-- Окно навигации -->
 
-            <Grid x:Name="NavBar" Grid.Row="1" Grid.ColumnSpan="3" Margin="0,0,1107,0">
+            <Grid x:Name="NavBar" Margin="0,37,0,0" Grid.RowSpan="2">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto"/>
                     <RowDefinition/>
@@ -75,14 +74,14 @@
 
 
             </Grid>
-            <Grid x:Name="Dwn" Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="2" Margin="0,712,0,0" Grid.RowSpan="2">
-                <Label  Content="{Binding AppVersion}" Margin="35,0,1175,0" Grid.Row="2" VerticalAlignment="Center" Height="36" Width="40" FontSize="16"/>
-                <Label  Content="{Binding Username}" Height="36" Width="60" HorizontalAlignment="Left" Margin="1130,0,0,0" Grid.Row="2" VerticalAlignment="Center" FontSize="16"/>
+            <Grid x:Name="Dwn" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" Margin="34,3,0,0">
+                <Label  Content="{Binding AppVersion}" Margin="10,0,1129,0" VerticalAlignment="Center" Height="36" Width="Auto" FontSize="16"/>
+                <Label  Content="{Binding Username}" Height="36" Width="156" HorizontalAlignment="Left" Margin="1091,0,0,0" VerticalAlignment="Center" FontSize="16"/>
             </Grid>
-            <Rectangle Height="25" Width="330" Fill="#2E3B47" RadiusX="10" RadiusY="10" VerticalAlignment="Top" HorizontalAlignment="Left" Grid.Row="1" Grid.Column="2" Margin="460,375,0,0"/>
-            <TextBlock Text="Пожалуйста, выберите категорию" Grid.Row="1" Grid.Column="2" FontFamily="Montserrat" FontSize="18" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="484,377,0,0" Height="22" Width="Auto"/>
+            <Rectangle Height="25" Width="330" Fill="#2E3B47" RadiusX="10" RadiusY="10" VerticalAlignment="Top" HorizontalAlignment="Left" Grid.Row="1" Grid.Column="1" Margin="494,375,0,0"/>
+            <TextBlock Text="Пожалуйста, выберите категорию" Grid.Row="1" Grid.Column="1" FontFamily="Montserrat" FontSize="18" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="518,377,0,0" Height="22" Width="281"/>
 
-            <Frame x:Name="PageFrame" NavigationUIVisibility="Hidden" Grid.Column="2" Grid.ColumnSpan="2" Grid.Row="1"/>
+            <Frame x:Name="PageFrame" NavigationUIVisibility="Hidden" Grid.Column="1" Grid.ColumnSpan="2" Margin="34,37,0,0" Grid.RowSpan="2"/>
 
 
 

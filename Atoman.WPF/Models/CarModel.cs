@@ -11,7 +11,7 @@ namespace Atoman.WPF.Models
         /// <summary>
         /// Идентификатор автомобиля
         /// </summary>
-        public Guid CarId { get; set; }
+        public int CarId { get; set; }
         /// <summary>
         /// Марка автомобиля
         /// </summary>
@@ -39,7 +39,7 @@ namespace Atoman.WPF.Models
             {
                 new CarModel
                 {
-                        CarId = Guid.NewGuid(),
+                        CarId = 1,
                         CarBarCode = string.Empty,
                         CarMileage = 0,
                         CarNumber = "T538OO790",
@@ -52,7 +52,7 @@ namespace Atoman.WPF.Models
                 },
                 new CarModel
                 {
-                        CarId = Guid.NewGuid(),
+                        CarId = 2,
                         CarBarCode = string.Empty,
                         CarMileage = 0,
                         CarNumber = "K753AM790",
@@ -65,7 +65,7 @@ namespace Atoman.WPF.Models
                 },
                 new CarModel
                 {
-                        CarId = Guid.NewGuid(),
+                        CarId = 3,
                         CarBarCode = string.Empty,
                         CarMileage = 0,
                         CarNumber = "E753BK790",
@@ -78,7 +78,7 @@ namespace Atoman.WPF.Models
                 },
                 new CarModel
                 {
-                        CarId = Guid.NewGuid(),
+                        CarId = 4,
                         CarBarCode = string.Empty,
                         CarMileage = 0,
                         CarNumber = "K233AA790",

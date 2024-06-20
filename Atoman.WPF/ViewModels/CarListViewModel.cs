@@ -4,10 +4,12 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.Linq;
+using System.Reflection.Metadata;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Input;
 
 namespace Atoman.WPF.ViewModels
 {
@@ -17,26 +19,42 @@ namespace Atoman.WPF.ViewModels
         {
             CarList = CarMockService.GetCars();
             CarModelsGrid = new ObservableCollection<CarModel>(CarMockService.GetCars());
-            ActList =new ObservableCollection<Acts>( ActMockService.GetAct());
+            ActList = ActMockService.GetAct();
+            FilterActs= new ObservableCollection<Acts>(ActMockService.GetAct());
         }
 
 
         #region Properties 
 
-        
+        private CarModel _selectedcar;
+        public CarModel SelectedCar
+        {
+            get { return _selectedcar; }
+            set
+            {
+                _selectedcar = value;
+                OnPropertyChanged();
+            }
+        }
+
+        private ObservableCollection<Acts> _filterActs;
+        public ObservableCollection<Acts> FilterActs
+        {
+            get { return _filterActs; }
+            set
+            {
+                _filterActs = value;
+                OnPropertyChanged();
+            }
+        }
+
+
         private List<CarModel> _carList;
         public List<CarModel> CarList;
 
-        private ObservableCollection<Acts> _actList;
-        public ObservableCollection<Acts> ActList
-        {
-            get { return _actList; }
-            set 
-            { 
-                _actList = value;
-                OnPropertyChanged();
-            }   
-        }
+        private List<Acts> _actList;
+        public List<Acts> ActList;
+       
 
 
         private ObservableCollection<CarModel> _carModelsGrid;
@@ -60,6 +78,8 @@ namespace Atoman.WPF.ViewModels
                 OnPropertyChanged();
             }
         }
+
+       
 
         private string _searchPlate;
         public string SearchPlate
@@ -122,10 +142,28 @@ namespace Atoman.WPF.ViewModels
                 SearchPlate = string.Empty;
             }
         }
+        public void FilterAct()
+        {
 
-        #region Commands 
+            FilterActs.Clear();
+            if (SelectedCar != null)
+            {
+                
+                int selectedCarId = Convert.ToInt32(SelectedCar.CarId);
+                var filteredActs = ActList.Where(act => act.CarID == selectedCarId);
+                if (filteredActs.Any())
+                {
+                    FilterActs = new ObservableCollection<Acts>(filteredActs);
+                }
+            }
+            
+              
 
-        public RelayCommand SearchCommand => new RelayCommand(a => FilterCar());
+        }
+
+    #region Commands 
+
+    public RelayCommand SearchCommand => new RelayCommand(a => FilterCar());
 
         #endregion
     }
